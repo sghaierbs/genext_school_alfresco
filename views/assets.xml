@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<template id="assets_backend" name="school_management_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                
+
+               
+                <link rel="stylesheet" href="/genext_school_alfresco/static/src/css/bootstrap_fonts_fixes.css"/>
+                <!-- Dropzone css -->
+                <link rel="stylesheet" href="/genext_school_alfresco/static/src/css/dropzone.css"/>
+                <!-- DataTable css -->
+                <link rel="stylesheet" href="/genext_school_alfresco/static/src/css/jqueryUI.css"/>
+                <link rel="stylesheet" href="/genext_school_alfresco/static/src/css/dataTables.jqueryui.css"/>
+                <!-- jsTree css -->
+                <link rel="stylesheet" href="/genext_school_alfresco/static/src/css/default/style.css"/>
+                
+
+
+                <!-- DataTable js -->
+                <script type="text/javascript" src="/genext_school_alfresco/static/lib/jquery.dataTables.js"/>
+                <script type="text/javascript" src="/genext_school_alfresco/static/lib/dataTable.jqueryui.js"/>
+                <!-- jsTree js -->
+                <script type="text/javascript" src="/genext_school_alfresco/static/src/js/jstree.js"/>
+
+                
+                <script type="text/javascript" src="/genext_school_alfresco/static/src/js/dropzone.js"/>
+                <script type="text/javascript" src="/genext_school_alfresco/static/src/js/genext_school_alfresco.js"/>
+                <script type="text/javascript" src="/genext_school_alfresco/static/src/js/alfresco.js"/>
+            </xpath>
+        </template>
+    	
+	</data>
+</odoo>

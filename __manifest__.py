@@ -1,0 +1,21 @@
+{
+	'name':'Genext School Alfresco Manager',
+	'description':'Manage your Alfresco content from odoo',
+	'version': '1.0',
+    'category': 'school mangs',
+    'author': 'Genext Team',
+    'website': 'https://www.genext-it.com',
+	'depends':['alfresco','genext_school'],
+	'data':[
+		'views/assets.xml',
+		'views/alfresco_config_view.xml',
+		'views/student_views.xml',
+		'views/school_view.xml',	
+		'security/alfresco_groupes.xml',
+		'security/ir.model.access.csv',
+	],
+	'qweb': ['static/src/xml/*.xml'],
+	#'css': [ 'static/src/css/style.css' ],
+	#'js': [ 'static/src/css/script.js' ],
+	#'images': [ 'images/src/img/image.png' ],
+}

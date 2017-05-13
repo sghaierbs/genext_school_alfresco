@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="view_student_form_inherit" model="ir.ui.view">
+	        <field name="name">Student Form</field>
+			<field name="model">school.student</field>
+			<field name="type">form</field>
+	        <field name="inherit_id" ref="genext_school.view_student_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//page[6]" position="after">
+	            	<!-- only users that belongs to site_consumer group can view documents -->
+	                <page groups="genext_school_alfresco.site_consumer" string="Alfresco Documents" >
+	                    <group >
+	                        <!-- <field name="document_ids" string="" widget="Alfresco" attr="{'invisible':[('site_id', '=', False)]}"/>  -->
+	                        <field name="site_id" invisible="1" />
+	                        <field name="document_library_node_ref" string="Documents"  widget="Alfresco" />
+	                    </group>
+	                </page>
+	            </xpath>
+	        </field>
+    	</record>
+
+
+		<!-- Student Server Action -->
+		<record id="create_alfresco_site_action" model="ir.actions.server" >
+	        <field name="name">Create alfresco site</field>
+	        <field name="model_id" ref="model_school_student"/>
+	        <field name="condition">True</field>
+	        <field name="type">ir.actions.server</field>
+	        <field name="state">code</field>
+	        <field name="code">
+	            env['school.student'].browse(context.get('active_id')).createSite()
+	        </field>
+	    </record>
+
+	    <record id="create_alfresco_site" model="ir.values">
+	            <field name="name">name</field>
+	            <field name="model">school.student</field>
+	            <field name="key" >action</field>
+	            <field name="key2">client_action_multi</field>
+	            <field name="value" eval="'ir.actions.server,%d'%create_alfresco_site_action"/>
+	            <field name="object" eval="True" />
+	    </record> 
+	</data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+    	<record model="ir.module.category" id="alfresco_roles">
+		  <field name="name">Alfresco</field>
+		  <field name="description">alfresco roles</field>
+		  <field name="sequence">6</field>
+		</record>
+
+		<record id="site_consumer" model="res.groups">
+		    <field name="name">Site Consumer</field>
+		    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		    <!-- by setting the users field by default users belongs to the base.group_user will be added to this groupe  -->
+		    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+		    <field name="category_id" ref="genext_school_alfresco.alfresco_roles"/>
+		</record>
+
+		<record id="site_collaborator" model="res.groups">
+		    <field name="name">Site Collaborator</field>
+		    <!-- by setting the implied_ids means that user belongs to this groupe will have the rights of the implied groupe id 
+		    	it's some sort of extending rights by default -->
+		    <field name="implied_ids" eval="[(4, ref('genext_school_alfresco.site_consumer'))]"/>
+		    <field name="category_id" ref="genext_school_alfresco.alfresco_roles"/>
+		</record>
+
+		<record id="site_contributor" model="res.groups">
+		    <field name="name">Site Contributor</field>
+		    <field name="implied_ids" eval="[(4, ref('genext_school_alfresco.site_collaborator'))]"/>
+		    <field name="category_id" ref="genext_school_alfresco.alfresco_roles"/>
+		</record>
+
+		<record id="site_manager" model="res.groups">
+		    <field name="name">Site Manager</field>
+		    <field name="implied_ids" eval="[(4, ref('genext_school_alfresco.site_contributor'))]"/>
+		    <field name="category_id" ref="genext_school_alfresco.alfresco_roles"/>
+		</record>
+    </data>
+</openerp>

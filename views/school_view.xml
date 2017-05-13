@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem name="School Settings" id="menu_school_settings" parent="genext_school.menu_school_root" />
+		<menuitem id="school_settings_menu" name="Alfresco" groups="genext_school_alfresco.site_manager" parent="menu_school_settings" action="school_alfresco_config_action"/>
+		<!-- <menuitem id="school_document_type_menu" name="Document Types" parent="menu_school_settings" action="school_alfresco_document_type_action"/>-->
+	</data>
+</odoo>

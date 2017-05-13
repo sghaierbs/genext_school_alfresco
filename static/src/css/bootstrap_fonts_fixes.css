@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/web/static/lib/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+
+
+
+/* -------------------------------- CSS for JsTree create folder dialog ---------------------- */
+.invalid-input {
+  background-color: #faecee;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+
+/* -------------------------------- CSS for DataTable ---------------------- */
+/*td.details-control {
+  background: url('images/details_open.png') no-repeat center center;
+  cursor: pointer;
+}
+
+tr.shown td.details-control {
+  background: url('images/details_close.png') no-repeat center center;
+}*/
+
+.open-in-alfresco-btn {
+  background: url('images/alfresco-logo-16.png') no-repeat center center;
+  width:12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.toolbar {
+    float: left;
+}
+
+.alfresco-btn {
+    margin-right: 4px;
+    /*color: white;
+    background-color: #7c7bad;
+    border-color: #7c7bad;*/
+}
+/*
+.alfresco-btn:hover {
+    margin-right: 4px;
+    color: white;
+    background-color: #5f5e97;
+    border-color: #5b5a91;
+}*/

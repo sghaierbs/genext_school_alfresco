@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="SchoolFieldBinaryFile">
+        <input type="text" class="o_form_input"
+            t-att-name="widget.name"
+            t-att-autofocus="widget.node.attrs.autofocus"/>
+    </t>
+
+    <t t-name="SBSFieldChar">
+       <span t-if="widget.get('effective_readonly')"/>
+
+        <input t-if="!widget.get('effective_readonly')" class="o_form_input"
+            t-att-barcode_events="widget.options.barcode_events"
+            t-att-type="text"
+            t-att-id="widget.id_for_label"
+            t-att-tabindex="widget.node.attrs.tabindex"
+            t-att-autofocus="widget.node.attrs.autofocus"
+            t-att-placeholder="widget.node.attrs.placeholder"
+            t-att-autocomplete="widget.password ? 'new-password' : widget.node.attrs.autocomplete"
+            t-att-maxlength="widget.field.size"/>
+    </t>
+
+    <t t-name="DirectoryTree">
+        <div>
+            <div id="tree">
+               
+            </div>
+            <div>
+                <p style="margin-top: 20px;">
+                    This tree is a representation to the folder structure that will be used in Alfresco
+                </p>
+            </div>
+        </div>
+    </t>
+
+
+    <t t-name='UploadNewDocumentVersionDialog'>
+        <form class="o_form_view" role="form" t-att-id="id">
+            <div class="form-group mb0">
+                <label for="file" class="col-sm-3 control-label">
+                    Document:
+                </label>
+                <div class="col-sm-9">
+                    <input type="file" name="upload_file" class="new-upload o_form_input_file" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="base64" class="col-sm-3 control-label">
+                    Base64:
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="base64" class="base64" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="version" class="col-sm-3 control-label">
+                    This version contains:
+                </label>
+                <div class="col-sm-9">
+                    <select name="version" class="version">
+                        <option value='false'>minor changes</option>
+                        <option value='true'>major changes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="comments" class="col-sm-3 control-label">
+                    Comments:
+                </label>
+                <div class="col-sm-9">
+                    <textarea name="comments" rows="4" cols="50" class="comments o_form_input_file" />
+                </div>
+            </div>
+        </form>
+    </t>
+
+    <t t-name='UploadNewDocumentDialog'>
+        <form class="o_form_view" role="form" t-att-id="id">
+            <div class="form-group mb0">
+                <label for="page-name" class="col-sm-3 control-label">
+                    Document type:
+                </label>
+                <div class="col-sm-9">
+                    <select name="paths" class="paths">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="file_name" class="col-sm-3 control-label">
+                    Name:
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="file_name" class="file_name o_form_input_file" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="file_title" class="col-sm-3 control-label">
+                    Title:
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="file_title" class="file_title o_form_input_file" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="file" class="col-sm-3 control-label">
+                    Document:
+                </label>
+                <div class="col-sm-9">
+                    <input type="file" name="upload_file" class="new-upload o_form_input_file" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="description" class="col-sm-3 control-label">
+                    Description:
+                </label>
+                <div class="col-sm-9">
+                    <textarea name="description" rows="4" cols="50" class="description o_form_input_file" />
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="base64" class="col-sm-3 control-label">
+                    Base64:
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" name="base64" class="base64" readonly="readonly"/>
+                </div>
+            </div>
+        </form>
+    </t>
+
+    <t t-name='CreateFolderDialog'>
+        <form class="o_form_view" role="form" t-att-id="id">
+            <div class="form-group mb0">
+                <label for="page-name" class="col-sm-3 control-label">
+                    Content description:
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="content_description" class="o_form_field o_form_input" autofocus="autofocus" required="required"/>
+                </div>
+            </div>
+            <div class="form-group mb0">
+                <label for="page-name" class="col-sm-3 control-label">
+                    Folder Name:
+                </label>
+                <div class="col-sm-9" >
+                    <input type="text" id="folder_name" class="o_form_field o_form_input" autofocus="autofocus" required="required"/>
+                </div>
+            </div>
+            <div class="form-group mb1">
+                <label for="is_container" class="col-sm-3 control-label">
+                    Document Container
+                </label>
+                <div class="col-sm-9">
+                    <input type="checkbox" id="is_container" class="o_form_field o_form_input"  />
+                </div>
+            </div>
+            <div class="form-group mb1">
+                <label for="is_dynamic" class="col-sm-3 control-label">
+                    Dynamic Name
+                </label>
+                <div class="col-sm-9">
+                    <input type="checkbox" id="is_dynamic" class="o_form_field o_form_input" value="1" />
+                </div>
+            </div>
+            <div class="form-group hidden" id="naming_pattern_div">
+                <label for="naming_pattern" class="col-sm-3 control-label">
+                    Naming Pattern
+                </label>
+                <div class="col-sm-9">
+                    <select class="o_form_field o_form_input" id="naming_pattern">
+                        <option value="year">Year</option>
+                        <option value="month">Month</option>
+                        <option value="day">Day</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </t>
+
+
+    <t t-name="Alfresco">
+        <div>
+            <div id="tree">
+               
+            </div>
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <tbody>
+                </tbody>
+            </table>
+            <div class="documentpreview" style="display: none;"></div>
+        </div>
+    </t>
+
+    <t t-name="ContentActions">
+        <div class="tab_actions">
+            <div class="btn-group pull-right" role="group">                
+                <a type="button"
+                     class="btn btn-default btn-xs content-action-download alfresco-btn"
+                     aria-label="Download"
+                     data-toggle="tooltip"
+                     title="Download"
+                     t-att-href='object.downloadUrl'>
+                      <span class="fa fa-download" aria-hidden="true"></span>
+                </a>
+                <button type="button"
+                      class="btn btn-default btn-xs action-upload-new-version alfresco-btn"
+                      data-toggle="tooltip"
+                      title="Upload new version"
+                      aria-label="Upload">
+                      <span class="fa fa-upload" aria-hidden="true"></span>
+                </button>
+                <button type="button"
+                      class="btn btn-default btn-xs content-action-preview alfresco-btn"
+                      data-toggle="tooltip"
+                      title="Preview"
+                      aria-label="Preview">
+                      <span class="fa fa-eye" aria-hidden="true"></span>
+                </button>
+                <button type="button"
+                      class="btn btn-default btn-xs content-action-detele alfresco-btn"
+                      data-toggle="tooltip"
+                      title="Delete"
+                      aria-label="Delete">
+                      <span class="fa fa-trash-o" aria-hidden="true"></span>
+                </button>
+                <button type="button"
+                      class="btn btn-default btn-xs action-version alfresco-btn"
+                      data-toggle="tooltip"
+                      title="Versions"
+                      aria-label="Versions">
+                      <span class="fa fa-history" aria-hidden="true"></span>
+                </button>
+                <a type="button"
+                      class="btn btn-default btn-xs content-action-open-alfresco alfresco-btn"
+                      data-toggle="tooltip"
+                      title="Open in afresco"
+                      aria-label="Preview">
+                      <span class="glyphicon open-in-alfresco-btn" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="ContentDetails">
+        <div cellpadding="5">
+            <table cellpadding="5" cellspacing="0" border="0" style="float: left; margin-right: 20px;">
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">name</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.name"/></td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">createdByUser</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.createdByUser.displayName"/></td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">modifiedAt</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.modifiedAt"/></td>
+                </tr>
+                 <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">modifiedByUser</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.modifiedByUser.displayName"/></td>
+                </tr>
+            </table>
+            <table cellpadding="5" cellspacing="0" border="0" style="float: left">
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">mimeType</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.content.mimeType"/></td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">mimeTypeName</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.content.mimeTypeName"/></td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">File Size</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.content.sizeInBytes"/></td>
+                </tr>
+                 <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">cm:versionType</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.properties['cm:versionType']"/></td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">cm:versionLabel</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.properties['cm:versionLabel']"/></td>
+                </tr>
+                 <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label"><label class="oe_form_label">cm:description</label></td>
+                    <td class="oe_form_group_cell"><t t-esc="object.properties['cm:description']"/></td>
+                </tr>
+            </table>
+        </div>
+    </t>
+
+    <t t-name='DocumentViewer'>
+        <div class="pdf_document_viewer">
+            <div class='cmis_document_viewer_toolbar pull-right'>
+                <button type="button" class="btn btn-primary btn-sm button-back-browser">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>&amp;nbsp;Back to documents list
+                </button>
+            </div>
+            <div class='pdf_document_viewer_iframe'>
+                <iframe id='viewer' 
+                        t-att-src='url'
+                        t-att-width='width'
+                        t-att-height='height'
+                        allowfullscreen='1'
+                        webkitallowfullscreen='1'></iframe>
+            </div>
+        </div>
+    </t>
+
+
+    <t t-name="UploadField">
+        
+        <input t-if="widget.get('effective_readonly')" 
+                class="o_form_input"
+                readonly="readonly"
+                t-att-name="widget.name"
+            />
+
+        <input t-if="!widget.get('effective_readonly')" class="o_form_input"
+                t-att-type="file"   
+                t-att-id="widget.id_for_label"
+                />
+        <div>
+            <button type="button" class="btn btn-sm btn-default fa fa-pencil select_file_button" title="Select"/>            
+            <div t-if="!widget.get('effective_readonly')" class="dropzone" id="dropzoneID">
+                
+            </div>
+        </div>
+        <div>
+            <div id='easy-tree' style="overflow:auto; text-align: left; border:1px solid silver; min-height:100px;">
+                
+            </div>
+        </div>
+        <div>
+                <table id="example" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </t>
+    
+</templates>
